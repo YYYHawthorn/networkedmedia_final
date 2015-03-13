@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.2/p5.js"></script>
+	<script language="javascript" type="text/javascript" src="sketch.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+	<div><h4 id="lev">LEVEL1</h4></div>
+
+	<form onsubmit="return false">
+		Guess the Percentage: 
+		<input id="guess" type="text" name="percentage" onclick="this.form.reset();"> 0 %
+		
+		<button  id="sub" type="button" onclick="checkAnswer()">Submit</button>
+
+		<p id="info" style="display: inline"></p>
+
+		<button  id="answ" onclick="myredraw()"></button>
+
+		<button id="next" onclick="nextLevel()">Great! Let's move on</button>
+
+	</form>
+	<div id="myContainer"></div>
+
+	<div >
+
+
+	</div>
+
+
+	</body>
+	</html>

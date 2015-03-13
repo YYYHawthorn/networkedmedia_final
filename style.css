@@ -1,0 +1,73 @@
+		body{
+			padding-left: 50px;
+		}
+
+		#lev{
+			/* LEVEL 1: */
+			position: relative;
+			margin-top:20px;
+			margin-bottom:30px;
+			font-family: GothamExLight;
+			font-size: 50px;
+			color: #000000;
+			text-align: center;
+			/*line-height: 30px;*/
+		}
+		form{
+			/* Guess the Percentage: */
+			position: relative;
+			margin:10px;
+			/*top: 140px;*/
+			font-family: GothamExLight;
+			font-size: 25px;
+			color: #000000;
+			line-height: 38px;
+
+		}
+		#guess {  
+			width: 40px;
+			font-size: 28px;
+			color: #000000;
+			line-height: 38px;
+			text-align: right;
+		}
+		#next{
+			display: none;
+		}
+		#answ{
+			display: none;
+		}
+
+		button{
+			background-color:#44c767;
+			-moz-border-radius:28px;
+			-webkit-border-radius:28px;
+			border-radius:28px;
+			border:1px solid #18ab29;
+			display:inline-block;
+			cursor:pointer;
+			color:#000000;
+			font-family:arial;
+			font-size:17px;
+			padding:10px 21px;
+			text-decoration:none;
+			margin:10px;
+		}
+		button:hover {
+			background-color:#5cbf2a;
+		}
+		button:active {
+			position:relative;
+			top:1px;
+		}
+
+		#myContainer{
+			position: relative;
+			/*top: 40px;*/
+			/* Rectangle 1: */
+		}
+
+		div{
+			position: relative;
+			width: 500px;
+		}
