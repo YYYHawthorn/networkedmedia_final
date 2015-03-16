@@ -9,7 +9,7 @@
 <body>
 	<div><h4 id="lev">LEVEL1</h4></div>
 
-	<form onsubmit="return false">
+	<form id="myForm" onsubmit="return false">
 		Guess the Percentage: 
 		<input id="guess" type="text" name="percentage" onclick="this.form.reset();"> 0 %
 		
@@ -20,6 +20,8 @@
 		<button  id="answ" onclick="myredraw()"></button>
 
 		<button id="next" onclick="nextLevel()">Great! Let's move on</button>
+
+		<button id="restart" onClick="window.location.reload()">Restart</button>
 
 	</form>
 	<div id="myContainer"></div>

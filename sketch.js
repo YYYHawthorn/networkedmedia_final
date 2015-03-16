@@ -15,7 +15,7 @@ function setup() {
 function draw() {
   // background
   background(212, 177, 106);
-
+  //set different shapes at 3 levels
   if (l == 1) {
  	fill(26, 188, 156);
   	rect(0,0,x1,500);
@@ -30,8 +30,8 @@ function draw() {
   else if ( l == 3) {
     ellipseMode(CENTER);
   	fill(255, 255, 41);
-  	ellipse(positionX3,positionY3,x3,x3);
-  	s = PI*x3*x3/4;
+  	ellipse(positionX3,positionY3,x3*2,x3*2);
+  	s = PI*x3*x3;
   }
   else{
   	fill(192, 57, 43);
@@ -45,19 +45,24 @@ function draw() {
 
 function checkAnswer(){
   var g = document.getElementById('guess').value;
-  //smoth the percentage to 10%, 20%...
+  //calculate percentage and smoth the it to 10%, 20%... 
+  // if correct, show "next"
   if (g == round(s/25000)){
+ //  	if(l < 3)
+ //  		{ var moveOn= document.getElementById("next");
+	// 	moveOn.style.display = "block";}
+	// else{l = 0;}
 	var moveOn= document.getElementById("next");
 	moveOn.style.display = "block";
   }
 
-  //wrong answer,redraw current level
+  //if wrong answer,redraw current level
   else{
 	var  answer= document.getElementById("answ");
 	answer.style.display = "block";
 	answer.innerHTML = "Area percentage is closest to " + 10*round(s/25000) + "%.  Try again";
-  //count attempts
-  if (l == 0){attempts = 0} else{ attempts++ };
+ 	 //count attempts
+ 	 if (l == 0){attempts = 0} else{ attempts++ };
 
      var  attem= document.getElementById("info");
      attem.innerHTML = "Attempts: " + attempts;
@@ -76,9 +81,11 @@ function myredraw(){
     positionY2 = round(random(1.2*x2, width-1.2*x2));
 
     x3 = randomNumber(248);
-    positionX3 = round(random(1.2*x3, width-1.2*x3));
-    positionY3 = round(random(1.2*x3, width-1.2*x3));
+    positionX3 = round(random(x3, width-x3));
+    positionY3 = round(random(x3, width-x3));
 
+    //reset the form and hide sentences
+	document.getElementById("myForm").reset();
     var  answer= document.getElementById("answ");
     answer.style.display = "none";
 
@@ -92,15 +99,20 @@ function randomNumber(a){
 
 function nextLevel(){
 	var h = document.getElementById("lev");
+	var res = document.getElementById("restart");
+
   if (l < 3) { 
     l++;  
-    h.innerHTML = "LEVEL" + l;   
+    h.innerHTML = "LEVEL " + l;   
   } 
   else{ 
     l = 0;
     h.innerHTML = "CONGRADULATIONS"; 
+    res.style.display = "block";
      }
 
+     //reset the form and hide sentences
+	document.getElementById("myForm").reset();
 	
 	var  answer= document.getElementById("answ");
 	answer.style.display = "none";

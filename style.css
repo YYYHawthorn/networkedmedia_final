@@ -32,9 +32,15 @@
 			text-align: right;
 		}
 		#next{
+			/*background-color:#44c767;*/
 			display: none;
 		}
 		#answ{
+			background-color:#e74c3c;
+			display: none;
+		}
+		#restart{
+			background-color:#f1c40f;
 			display: none;
 		}
 
